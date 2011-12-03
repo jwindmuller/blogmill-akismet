@@ -24,6 +24,6 @@ class AkismetHooksComponent extends Object {
     
     public function comment_is_spam($comment_data) {
         $akismet = $this->newAkismet($comment_data);
-        var_dump($akismet->submitSpam());
+        $akismet->submitSpam();
     }
 }
