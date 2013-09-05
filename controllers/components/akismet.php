@@ -8,11 +8,11 @@ class AkismetComponent extends Object {
         $akismet = new Akismet($blogUrl, $key);
 
         if ( $comment_data ) {
-            extract( $comment_data['Comment'] );
+            extract( $comment_data );
             $akismet->setCommentAuthor($name);
-            $akismet->setCommentAuthorEmail($email);
-            $akismet->setCommentAuthorURL($url);
-            $akismet->setCommentContent($content);
+            $akismet->setCommentAuthorEmail(@$email);
+            $akismet->setCommentAuthorURL(@$url);
+            $akismet->setCommentContent(@$content);
         }
         return $akismet;
     }
